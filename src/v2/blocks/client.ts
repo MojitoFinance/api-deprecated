@@ -6,7 +6,7 @@ import fetch from 'node-fetch'
 export const blockClient = new ApolloClient({
   link: new HttpLink({
     fetch,
-    uri: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks'
+    uri: 'https://thegraph.kcc.network/subgraphs/name/kcc-blocks'
   }),
   cache: new InMemoryCache()
 })

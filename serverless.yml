@@ -1,7 +1,9 @@
+org: smodavi
+app: my-typescript-http-api-app
 service:
   name: uniswap-api-auth
 
-frameworkVersion: ">=1.75.1 <2.0.0"
+frameworkVersion: ">=1.75.1 <3.0.0"
 
 provider:
   name: aws
@@ -47,6 +49,7 @@ plugins:
   - serverless-plugin-typescript
   - serverless-api-gateway-caching
   - serverless-content-encoding
+  - serverless-offline
 
 functions:
   v1-summary:
@@ -55,7 +58,7 @@ functions:
       - http:
           method: get
           path: /v1/summary
-          private: true
+          private: false
           caching:
             enabled: true
             ttlInSeconds: 900
@@ -66,7 +69,7 @@ functions:
       - http:
           method: get
           path: /v1/tickers
-          private: true
+          private: false
           caching:
             enabled: true
             ttlInSeconds: 60
@@ -77,7 +80,7 @@ functions:
       - http:
           method: get
           path: /v1/assets
-          private: true
+          private: false
           caching:
             enabled: true
             ttlInSeconds: 3600
@@ -88,7 +91,7 @@ functions:
       - http:
           method: get
           path: "/v1/orderbook/{pair}"
-          private: true
+          private: false
           caching:
             enabled: true
             cacheKeyParameters:
@@ -102,7 +105,7 @@ functions:
       - http:
           method: get
           path: "/v1/trades/{pair}"
-          private: true
+          private: false
           caching:
             enabled: true
             cacheKeyParameters:
@@ -115,7 +118,7 @@ functions:
       - http:
           method: get
           path: /v2/summary
-          private: true
+          private: false
           caching:
             enabled: true
             ttlInSeconds: 900
@@ -126,7 +129,7 @@ functions:
       - http:
           method: get
           path: /v2/tickers
-          private: true
+          private: false
           caching:
             enabled: true
             ttlInSeconds: 60
@@ -137,7 +140,7 @@ functions:
       - http:
           method: get
           path: /v2/assets
-          private: true
+          private: false
           caching:
             enabled: true
             ttlInSeconds: 3600
@@ -148,7 +151,7 @@ functions:
       - http:
           method: get
           path: "/v2/orderbook/{pair}"
-          private: true
+          private: false
           caching:
             enabled: true
             cacheKeyParameters:
@@ -161,7 +164,7 @@ functions:
       - http:
           method: get
           path: "/v2/trades/{pair}"
-          private: true
+          private: false
           caching:
             enabled: true
             cacheKeyParameters:

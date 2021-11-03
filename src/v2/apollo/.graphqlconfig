@@ -4,7 +4,7 @@
   "extensions": {
     "endpoints": {
       "Uniswap V2": {
-        "url": "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
+        "url": "https://thegraph.kcc.network/subgraphs/name/mojito/swap",
         "headers": {
           "user-agent": "JS GraphQL"
         },
